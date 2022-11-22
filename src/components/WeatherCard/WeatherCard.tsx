@@ -1,31 +1,24 @@
 import React from 'react';
 import { ThreeDots } from 'react-loader-spinner';
-
-interface IProps {
-  temperature: number;
-  weatherDescription: string;
-  humidity: string;
-  wind: number;
-  icon: any;
-}
+import { weatherDataType } from '../../constants/dataTypes';
 
 const WeatherCard = ({
   temperature,
-  weatherDescription,
+  description,
   humidity,
   wind,
   icon,
-}: IProps) => {
+}: weatherDataType) => {
   return (
     <div style={{ textAlign: 'left' }}>
       {temperature ? (
         <ul>
           <li>Temperature: {Math.round(temperature)} °C </li>
-          <li>Description: {weatherDescription} </li>
+          <li>Description: {description} </li>
           <li>Humidity: {humidity} %</li>
           <li>Wind: {Math.round(wind)} km/h </li>
           <li>
-            <img src={icon} alt={weatherDescription} />
+            <img src={icon} alt={description} />
           </li>
         </ul>
       ) : (

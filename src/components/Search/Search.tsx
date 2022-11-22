@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import WeatherCard from '../WeatherCard/WeatherCard';
+import { weatherDataType } from '../../constants/dataTypes';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState<weatherDataType>({
+    temperature: 0,
+    description: '',
+    humidity: '',
+    wind: 0,
+    icon: '',
+  });
 
   const displayWeather = (response) => {
     setIsLoaded(true);
@@ -45,7 +52,7 @@ const Search = () => {
           temperature={weatherData.temperature}
           wind={weatherData.wind}
           humidity={weatherData.humidity}
-          weatherDescription={weatherData.description}
+          description={weatherData.description}
           icon={weatherData.icon}
         />
       ) : null}
