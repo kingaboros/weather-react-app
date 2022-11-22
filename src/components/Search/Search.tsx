@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import WeatherCard from '../WeatherCard/WeatherCard';
 import { weatherDataType } from '../../constants/dataTypes';
+
+import WeatherCard from '../WeatherCard/WeatherCard';
+import styles from './styles.module.scss';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -38,14 +40,15 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className={styles.inputContainer}>
       <form onSubmit={handleSubmit}>
         <input
+          className={styles.inputForm}
           type="search"
           placeholder="Enter a city..."
           onChange={showCityData}
         />
-        <input type="submit" value="Search" />
+        <input className={styles.submitInput} type="submit" value="Search" />
       </form>
       {isLoaded ? (
         <WeatherCard
@@ -56,7 +59,7 @@ const Search = () => {
           icon={weatherData.icon}
         />
       ) : null}
-    </>
+    </div>
   );
 };
 

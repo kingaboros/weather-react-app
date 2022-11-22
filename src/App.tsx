@@ -12,15 +12,11 @@ import './App.scss';
 const App = () => {
   return (
     <div className="appContainer">
-      <header>
-        <Header />
-        <Search />
-        <SearchResult />
-        <Forecast />
-      </header>
-      <footer>
-        <Credentials />
-      </footer>
+      <Header />
+      <Search />
+      <SearchResult />
+      <Forecast />
+      <Credentials />
     </div>
   );
 };

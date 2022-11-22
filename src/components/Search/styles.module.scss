@@ -1,0 +1,45 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../constants/colors';
+
+.inputContainer {
+  display: block;
+  margin: 3% 31%;
+  width: 100%;
+}
+
+.inputForm {
+  @extend .form-control;
+  border-radius: 60px;
+  height: 2.5rem;
+  width: 30%;
+  display: inline;
+  &::placeholder {
+    color: $lightGrey !important;
+  }
+  &:focus-visible {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
+    transition: 0.3s box-shadow;
+    border-color: $lightGrey !important;
+  }
+  &:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) !important;
+    transition: 0.3s box-shadow !important;
+    border-color: $lightGrey !important;
+  }
+  &:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: 0.3s box-shadow;
+  }
+}
+
+.submitInput {
+  @extend .inputForm;
+  width: 8%;
+  background-color: $mainColor;
+  color: white;
+  margin-left: 10px;
+  &:hover {
+    background-color: $ligherMain;
+    color: $mainColor;
+  }
+}
