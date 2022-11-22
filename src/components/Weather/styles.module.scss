@@ -1,0 +1,47 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.currentLocation,
+.weatherFeature {
+  position: relative;
+  display: inline;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.cityName {
+  font-style: normal;
+  margin: 10px;
+}
+
+.temperature {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #2e2727;
+  font-size: 80px;
+  text-align: right;
+}
+
+.weatherDesc {
+  text-align: left;
+  margin-left: 100px;
+  letter-spacing: 1px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  color: #fccbcb;
+}
+
+h3 {
+  font-family: 'Architects Daughter', cursive;
+  color: #b97272;
+  text-align: center;
+}
