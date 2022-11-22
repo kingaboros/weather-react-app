@@ -15,7 +15,7 @@ const Search = () => {
     icon: '',
   });
 
-  const displayWeather = (response) => {
+  const displayWeather = (response: any) => {
     setIsLoaded(true);
     setWeatherData({
       temperature: response.data.main.temp,
@@ -26,15 +26,15 @@ const Search = () => {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
     const apiKey = '50a2cd96751f0c33cc1da997a8fb13b2';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   };
 
-  const showCityData = (event) => {
-    setSearchTerm(event.target.value);
+  const showCityData = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
   };
 
   return (

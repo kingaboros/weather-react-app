@@ -5,3 +5,5 @@ export interface weatherDataType {
   wind: number;
   icon: any;
 }
+
+export type FixMeLater = any;
